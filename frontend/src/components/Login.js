@@ -45,6 +45,11 @@ const Login = ({ onLogin }) => {
           placeholder="Password"
           className="login-input"
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleLogin();
+            }
+          }}
         />
         <button className="login-button" onClick={handleLogin} disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
