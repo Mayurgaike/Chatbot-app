@@ -11,10 +11,17 @@ const ChatWindow = () => {
       const newMessage = { text: input, sender: 'user', timestamp: new Date() };
       setMessages([...messages, newMessage]);
 
-      const response = await fetchChatResponse(input);
-      const botMessage = { text: response.data.message, sender: 'bot', timestamp: new Date() };
+      try {
+        console.log('Sending message to API:', input);  // Debug log
+        const response = await fetchChatResponse(input);
+        console.log('API response:', response.data);  // Debug log
 
-      setMessages((prev) => [...prev, botMessage]);
+        const botMessage = { text: response.data.response, sender: 'bot', timestamp: new Date() };
+        setMessages((prev) => [...prev, botMessage]);
+      } catch (error) {
+        console.error('Error sending message:', error);
+      }
+
       setInput('');
     }
   };
