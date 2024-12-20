@@ -67,6 +67,9 @@ def chat():
         if "hello" in user_message or "hi" in user_message:
             return jsonify({"status": "success", "response": "Hello, welcome back! How can I help you today?"}), 200
 
+        if "thanks" in user_message or "thankyou" in user_message:
+            return jsonify({"status": "success", "response": "You are welcome!! Please feel free to ask any other queries!"}), 200
+
         # Handle "tell me about" queries
         if "tell me about" in user_message:
             product_name = user_message.replace("tell me about", "").strip()
@@ -110,4 +113,5 @@ def chat():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+

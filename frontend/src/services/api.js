@@ -14,7 +14,6 @@ export const loginUser = async (credentials) => {
 export const fetchChatResponse = async (message) => {
   try {
     const response = await axios.post(`${API_URL}/chat`, { message });
-    console.log('Response from API:', response);  // Log the API response
     return response;
   } catch (error) {
     console.error('Error during API call:', error);

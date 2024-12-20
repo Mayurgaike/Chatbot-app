@@ -37,16 +37,18 @@
 
 /* Input Fields */
 .login-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  width: 100%; /* Ensure the fields take the full available width */
+  padding: 12px; /* Increase padding for better touch interaction */
+  margin-bottom: 15px; /* Maintain margin between the fields */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
   outline: none;
+  box-sizing: border-box; /* Include padding and border in width */
   transition: border-color 0.3s ease;
 }
 
+/* Focus effect for input fields */
 .login-input:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -75,9 +77,87 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* For Small Mobile Devices (Mobile-S) */
+@media (max-width: 320px) {
   .login-box {
     width: 90%;
     padding: 20px;
+    margin: 0 10px;
+  }
+
+  .login-input {
+    font-size: 12px;
+    padding: 10px; /* Adjust padding for smaller screens */
+    margin: 3% 3% 3% 0; /* Add margin to prevent touching edges */
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+    margin: 3% 3% 3% 3%;
+  }
+}
+
+/* For Medium Mobile Devices (Mobile-M) */
+@media (max-width: 375px) {
+  .login-box {
+    width: 90%;
+    padding: 25px;
+    margin: 0 10px;
+  }
+
+  .login-input {
+    font-size: 14px;
+    padding: 12px; /* Adjust padding */
+    margin: 3% 3% 3% 0; /* Add margin to prevent touching edges */
+  }
+
+  .login-button {
+    font-size: 15px;
+    padding: 12px;
+    margin: 3% 3% 3% 3%;
+  }
+}
+
+/* For Large Mobile Devices (Mobile-L) */
+@media (max-width: 480px) {
+  .login-box {
+    width: 85%;
+    padding: 25px;
+    margin: 0 10px;
+  }
+
+  .login-input {
+    font-size: 14px;
+    padding: 12px; /* Ensure padding is consistent */
+    margin: 3% 3% 3% 0; /* Add margin to prevent touching edges */
+  }
+
+  .login-button {
+    font-size: 16px;
+    padding: 12px;
+    margin: 3% 3% 3% 3%;
+  }
+}
+
+/* For Tablets or Larger Devices */
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+    padding: 25px;
+    margin: 0 15px;
+  }
+
+  .login-input {
+    font-size: 14px;
+    padding: 12px;
+    margin: 3%; /* Adjust margin for tablets */
+  }
+
+  .login-button {
+    font-size: 16px;
+    padding: 12px;
+    margin: 3% 3% 3% 3%;
   }
 }
