@@ -17,7 +17,7 @@ const ChatWindow = () => {
       try {
         const response = await fetchChatResponse(input);
         const botMessage = {
-          text: response.data.message,
+          text: response.data.response,
           sender: 'bot',
           timestamp: new Date(),
         };
